@@ -1,2 +1,3 @@
-# book-shelf
-My Repo to test out Istio and Helm along with Kubernetes. Also get my hands dirty with Travis CI.
+# Investments
+Test Project to build concepts around Itsio, Helm, Kubernetes and Travis CI.
+The orcestration here is for a customer portal who would get predictions along with Evidence.
