@@ -6,12 +6,12 @@ import numpy as np
 
 app = Flask(__name__)
 
-details = pd.read_csv('movie_details.csv');
+
 
 @app.route("/movies")
 def details():
-    
-    return details.head().to_string
+    details = pd.read_csv('movie_details.csv');    
+    return details.to_string(index=False)
 
 
 
