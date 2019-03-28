@@ -13,11 +13,16 @@ app = Flask(__name__)
 def movie_ratings():
     movieId = request.args.get('movieId');
     movies = pd.read_csv('ratings_small.csv');
-    
+
     if (movieId is not None):
+
         movies.set_index('movieId',inplace=True)
-        response = movies.loc[movieId,:];
-        return str(response.to_dict());
+        response = movies.loc[int(movieId),:];
+        return str(response);
+        
+    else:
+        return "movieId not found"
+                
 
 
 

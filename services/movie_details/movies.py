@@ -19,7 +19,7 @@ def movie_details():
         response = movies.loc[title,:];
         return str(response.to_dict());
     else :
-        return movies.to_string(index=False)
+        return "no title found"
 
 
 if __name__ == "__main__":
