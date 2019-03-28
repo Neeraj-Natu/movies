@@ -1,1 +1,7 @@
 .vscode
+services\movie_details\__pycache*
+services\predictions\__pycache*
+services\ratings\__pycache*
+services/movie_details/__pycache*
+services/movie_details/__pycache__/movies.cpython-36.pyc
+
