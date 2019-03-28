@@ -1,0 +1,37 @@
+from flask import Flask
+import json
+import pandas as pd
+from flask import request
+import requests
+
+
+
+app = Flask(__name__)
+
+
+
+@app.route('/movie-details', methods=['POST']) 
+def movie_details():
+    content = request.get_json();
+    title = content['title'];
+
+    prediction_service = "http://predictions:8093/predictions";
+    movie_service = "http://movies:8091/movies";
+    rating_service = "http://ratings:8092/ratings";
+
+    
+    if (title is not None):
+        
+        # code goes here
+        query_param = {'title':title};
+        movie_response = requests.get(movie_service, params=query_param).json();
+
+
+        return str(response.to_dict());
+    else :
+        return "title not found"
+
+
+if __name__ == "__main__":
+    app.run(host='0.0.0.0',port=8090)
+

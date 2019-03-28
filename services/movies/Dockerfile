@@ -10,8 +10,8 @@ COPY . /movies
 # Installing any needed dependencies specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-# Make port 5000 available to outside world.
-EXPOSE 5000
+# Make port 8091 available to outside world.
+EXPOSE 8091
 
 
 # Run movies.py when the container launches
