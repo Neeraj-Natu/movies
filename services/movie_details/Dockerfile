@@ -5,7 +5,7 @@ FROM python:3.7-slim
 WORKDIR /movie-details
 
 # copying the current directory contents to movie-details directory in container
-COPY . /movies
+COPY . /movies-details
 
 # Installing any needed dependencies specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt

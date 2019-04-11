@@ -27,7 +27,7 @@ def movie_details():
         movie_response = requests.get(movie_service, params=query_param).json();
 
 
-        return str(response.to_dict());
+        return str(movie_response.to_dict());
     else :
         return "title not found"
 
