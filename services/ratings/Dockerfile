@@ -10,8 +10,8 @@ COPY . /ratings
 # Installing any needed dependencies specified in requirements.txt
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
-# Make port 8092 available to outside world.
-EXPOSE 8092
+# Make port 9003 available to outside world.
+EXPOSE 9003
 
 
 # Run ratings.py when the container launches

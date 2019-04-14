@@ -16,8 +16,8 @@ def movie_details():
     title = content['title'];
 
     prediction_service = "http://predictions:8093/predictions";
-    movie_service = "http://movies:8091/movies";
-    rating_service = "http://ratings:8092/ratings";
+    movie_service = "http://movies:9002/movies";
+    rating_service = "http://ratings:9003/ratings";
 
     
     if (title is not None):
@@ -33,5 +33,5 @@ def movie_details():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=8090)
+    app.run(host='0.0.0.0',port=9001)
 
