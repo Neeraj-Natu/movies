@@ -8,7 +8,8 @@ WORKDIR /ratings
 COPY . /ratings
 
 # Installing any needed dependencies specified in requirements.txt
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install Flask
+RUN pip install pandas
 
 # Make port 9003 available to outside world.
 EXPOSE 9003

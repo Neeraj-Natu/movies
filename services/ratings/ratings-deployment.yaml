@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: ratings-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ratings
+  template:
+    metadata:
+      labels:
+        app: ratings
+    spec:
+      containers:
+      - name: ratings
+        image: gcr.io/neeraj-arena/ratings
+        ports:
+        - containerPort: 9003
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: ratings-service
+spec:
+  selector:
+    app: ratings
+  ports:
+  - protocol: TCP
+    port: 9003
+  type: ClusterIP

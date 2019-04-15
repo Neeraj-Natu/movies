@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: movies-detials-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movies-detials
+  template:
+    metadata:
+      labels:
+        app: movies-detials
+    spec:
+      containers:
+      - name: movies-detials
+        image: gcr.io/neeraj-arena/movie_details
+        ports:
+        - containerPort: 9001
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: movies-detials-service
+spec:
+  selector:
+    app: movies-detials
+  ports:
+  - protocol: TCP
+    port: 9001
+  type: ClusterIP

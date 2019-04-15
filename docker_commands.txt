@@ -1,0 +1,7 @@
+go to keys folder in desktop and run below command:
+docker login -u _json_key -p "$(cat neeraj-arena-8ab6102d6c75.json)" https://gcr.io
+
+
+
+from gcloud sdk run the below command to get credentials from neeraj-cluster:
+gcloud container clusters get-credentials neeraj-cluster --zone us-central1-a --project neeraj-arena

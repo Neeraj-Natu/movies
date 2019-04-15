@@ -15,7 +15,7 @@ def movie_details():
     content = request.get_json();
     title = content['title'];
 
-    prediction_service = "http://predictions:8093/predictions";
+    prediction_service = "http://predictions:9004/predictions";
     movie_service = "http://movies:9002/movies";
     rating_service = "http://ratings:9003/ratings";
 
