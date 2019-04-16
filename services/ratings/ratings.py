@@ -27,5 +27,5 @@ def movie_ratings():
 
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=9003)
+    app.run(host='0.0.0.0',port=80)
 

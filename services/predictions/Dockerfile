@@ -8,11 +8,10 @@ WORKDIR /predictions
 COPY . /predictions
 
 # Installing any needed dependencies specified in requirements.txt
-RUN pip install Flask
-RUN pip install pandas
+RUN pip install -r ./requirements.txt
 
-# Make port 9004 available to outside world.
-EXPOSE 9004
+# Make port 80 available to outside world.
+EXPOSE 80
 
 
 # Run predictions.py when the container launches

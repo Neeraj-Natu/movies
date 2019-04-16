@@ -16,7 +16,7 @@ spec:
       - name: movies
         image: gcr.io/neeraj-arena/movies
         ports:
-        - containerPort: 9002
+        - containerPort: 80
 
 ---
 kind: Service
@@ -28,5 +28,5 @@ spec:
     app: movies
   ports:
   - protocol: TCP
-    port: 9002
+    port: 80
   type: ClusterIP

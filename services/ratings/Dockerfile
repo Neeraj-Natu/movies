@@ -8,11 +8,10 @@ WORKDIR /ratings
 COPY . /ratings
 
 # Installing any needed dependencies specified in requirements.txt
-RUN pip install Flask
-RUN pip install pandas
+RUN pip install -r ./requirements.txt
 
-# Make port 9003 available to outside world.
-EXPOSE 9003
+# Make port 80 available to outside world.
+EXPOSE 80
 
 
 # Run ratings.py when the container launches

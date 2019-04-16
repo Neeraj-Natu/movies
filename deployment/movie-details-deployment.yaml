@@ -16,7 +16,7 @@ spec:
       - name: movies-details
         image: gcr.io/neeraj-arena/movie-details
         ports:
-        - containerPort: 9001
+        - containerPort: 80
 
 ---
 kind: Service
@@ -28,5 +28,6 @@ spec:
     app: movies-details
   ports:
   - protocol: TCP
-    port: 9001
-  type: ClusterIP
+    port: 80
+    targetPort: 80
+  type: NodePort

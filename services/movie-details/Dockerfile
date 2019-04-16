@@ -10,8 +10,8 @@ COPY . /details
 # Installing any needed dependencies specified in requirements.txt
 RUN pip install -r ./requirements.txt
 
-# Make port 9001 available to outside world.
-EXPOSE 9001
+# Make port 80 available to outside world.
+EXPOSE 80
 
 
 # Run movie-details.py when the container launches

@@ -17,3 +17,12 @@ gcloud container clusters get-credentials neeraj-cluster --zone us-central1-a --
 
 Now move to each deployment file and deploy the services one by one.
 kubectl create -f deployment.yaml
+
+
+Next once the NodePort type service is created check for the node-port and open the port from firewall as below:
+gcloud compute firewall-rules create test-node-port --allow tcp:[NODE_PORT]
+
+TO find out the IP address of the node check which node the service is running from console.
+Then go to VPN networks to find the external IP address of the node.
+
+The request now will be http://[External-IP]:[Node-Port]
