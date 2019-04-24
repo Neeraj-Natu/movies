@@ -22,7 +22,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: movies-service
+  name: movies
 spec:
   selector:
     app: movies

@@ -22,7 +22,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: ratings-service
+  name: ratings
 spec:
   selector:
     app: ratings

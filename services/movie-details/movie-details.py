@@ -15,19 +15,20 @@ def movie_details():
     content = request.get_json();
     title = content['title'];
 
-    prediction_service = "http://predictions:9004/predictions";
-    movie_service = "http://movies:9002/movies";
-    rating_service = "http://ratings:9003/ratings";
+    prediction_service = "http://predictions.default.svc.cluster.local:80/predictions";
+    movie_service = "http://movies.default.svc.cluster.local:80/movies";
+    rating_service = "http://ratings.default.svc.cluster.local:80/ratings";
 
     
     if (title is not None):
         
+
         # code goes here
         query_param = {'title':title};
         movie_response = requests.get(movie_service, params=query_param).json();
 
 
-        return str(movie_response.to_dict());
+        return json.dumps(movie_response);
     else :
         return "title not found"
 

@@ -22,7 +22,7 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: predictions-service
+  name: predictions
 spec:
   selector:
     app: predictions

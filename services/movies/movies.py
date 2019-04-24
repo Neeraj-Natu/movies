@@ -17,7 +17,7 @@ def movie_details():
     if (title is not None):
         movies.set_index('title',inplace=True)
         response = movies.loc[title,:];
-        return str(response.to_dict());
+        return json.dumps(response.to_dict());
     else :
         return "no title found"
 
