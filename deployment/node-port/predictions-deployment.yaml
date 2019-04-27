@@ -1,0 +1,32 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: predictions-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: predictions
+  template:
+    metadata:
+      labels:
+        app: predictions
+    spec:
+      containers:
+      - name: predictions
+        image: gcr.io/neeraj-arena/predictions
+        ports:
+        - containerPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: predictions
+spec:
+  selector:
+    app: predictions
+  ports:
+  - protocol: TCP
+    port: 80
+  type: ClusterIP

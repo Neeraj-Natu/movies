@@ -1,20 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: movies-details-deployment
+  name: ratings-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: movies-details
+      app: ratings
   template:
     metadata:
       labels:
-        app: movies-details
+        app: ratings
     spec:
       containers:
-      - name: movies-details
-        image: gcr.io/neeraj-arena/movie-details
+      - name: ratings
+        image: gcr.io/neeraj-arena/ratings
         ports:
         - containerPort: 80
 
@@ -22,12 +22,11 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: movies-details
+  name: ratings
 spec:
   selector:
-    app: movies-details
+    app: ratings
   ports:
   - protocol: TCP
     port: 80
-    targetPort: 80
-  type: NodePort
+  type: ClusterIP

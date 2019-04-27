@@ -1,0 +1,33 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: movie-details-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: movie-details
+  template:
+    metadata:
+      labels:
+        app: movie-details
+    spec:
+      containers:
+      - name: movie-details
+        image: gcr.io/neeraj-arena/movie-details
+        ports:
+        - containerPort: 80
+
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: movie-details
+spec:
+  selector:
+    app: movie-details
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+  type: NodePort

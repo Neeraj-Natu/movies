@@ -8,6 +8,10 @@ from flask import request
 app = Flask(__name__)
 
 
+@app.route('/') 
+def rediness_check():
+    
+    return "200";
 
 @app.route('/ratings', methods=['GET']) 
 def movie_ratings():

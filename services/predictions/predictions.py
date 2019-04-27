@@ -9,6 +9,10 @@ import random
 app = Flask(__name__)
 
 
+@app.route('/') 
+def rediness_check():
+    
+    return "200";
 
 @app.route('/predictions', methods=['GET']) 
 def movie_details():

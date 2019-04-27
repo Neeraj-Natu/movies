@@ -10,6 +10,14 @@ app = Flask(__name__)
 
 
 
+@app.route('/') 
+def rediness_check():
+    
+    return "200";
+    
+
+
+
 @app.route('/movie-details', methods=['POST']) 
 def movie_details():
     content = request.get_json();
