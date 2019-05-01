@@ -12,7 +12,6 @@
   Run below command to check if the image is correctly updated in google container registry
   `gcloud container images list`
 
-
 	from gcloud sdk run the below command to get credentials from neeraj-cluster: (This is needed only once every cluster)
   `gcloud container clusters get-credentials neeraj-cluster --zone us-central1-a --project neeraj-arena`
   the above command can also be copied from GKE when u click on connect for connecting to the desired cluster.
@@ -47,20 +46,21 @@
   Although you must first install this type of Ingress controller as it doesnot come in pre installed.
     
     
-    So all these issues are resolved in the current code and seem to work fine so to create Ingress all the services need to first created as a nodeport or as loadbalancer as Ingress can only talk to these. Once that is done you can run the command to create Ingress which is:
-    `kubectl create -f ingress-deployment.yaml`
+  So all these issues are resolved in the current code and seem to work fine so to create Ingress all the services need to first created as a nodeport or as loadbalancer as Ingress can only talk to these. Once that is done you can run the command to create Ingress which is:
+  `kubectl create -f ingress-deployment.yaml`
 
-
-# Deployment using helm charts    
+# Deployment using helm charts:
 	
-	For using helm first you need to install the same on your local machine.
-	For installing it on windows the easiest option is via choclatey which is a package manager for windows.
-	 first install choclatey using below comand on an admin cmd prompt:
-	```@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"```
+For using helm first you need to install the same on your local machine.
+For installing it on windows the easiest option is via choclatey which is a package manager for windows.
+first install choclatey using below comand on an admin cmd prompt:
+
+`@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"`
 	 
 	 
 	Once done use the below command to install helm:
-	`choco install kubernetes-helm`
+
+`choco install kubernetes-helm`
 	
 	it will take a few seconds to be installed. Once done you can use helm on your local machine.
 	Now go to google cloud sdk console and check if you have helm available by using `helm --help`
