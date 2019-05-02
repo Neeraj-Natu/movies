@@ -36,7 +36,7 @@
   For Ingress type you'll need to ensure that Http load balancing add-on has been enabled in GKE else the ingress is not created and there is usually no clue what is happening in backend. (https://stackoverflow.com/questions/51223937/ingress-is-not-getting-address-on-gke-and-gce).
 
   incase of issues with ingress not getting address use the below command to check what happened:
-  `kubectl describe ing neeraj-ingress -n default`
+  `kubectl describe ing neeraj-kube-ingress -n default`
 
   For Ingress type service remeber to have the service give a 200 response back on endpoint `/` as the rediness check is done on this endpoint by the internal rediness check which is created when we create the ingress for more refer:(https://serverfault.com/questions/809824/http-load-balancer-on-google-container-engine-using-ingress).
 
@@ -49,6 +49,27 @@
   So all these issues are resolved in the current code and seem to work fine so to create Ingress all the services need to first created as a nodeport or as loadbalancer as Ingress can only talk to these. Once that is done you can run the command to create Ingress which is:
   `kubectl create -f ingress-deployment.yaml`
 
+
+
+# Deployment type: Nginx Ingress
+  
+  For this type of Ingress Controller first you'll need to install the same using below command on the cluster:
+  
+  `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/mandatory.yaml`
+
+  `kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/master/deploy/provider/cloud-generic.yaml`
+  
+  The above commands are specific for GKE but similar commands for other clouds can be found at:
+  
+  https://kubernetes.github.io/ingress-nginx/deploy
+  https://github.com/kubernetes/ingress-nginx/blob/master/docs/deploy/index.md
+
+  Or best follow:
+  
+  https://cloud.google.com/community/tutorials/nginx-ingress-gke
+
+
+
 # Deployment using helm charts:
 	
 For using helm first you need to install the same on your local machine.
@@ -58,32 +79,37 @@ first install choclatey using below comand on an admin cmd prompt:
 `@"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"`
 	 
 	 
-	Once done use the below command to install helm:
+Once done use the below command to install helm:
 
 `choco install kubernetes-helm`
 	
-	it will take a few seconds to be installed. Once done you can use helm on your local machine.
-	Now go to google cloud sdk console and check if you have helm available by using `helm --help`
-	If done right there should be no issues there.
+it will take a few seconds to be installed. Once done you can use helm on your local machine.
+Now go to google cloud sdk console and check if you have helm available by using `helm --help`
+If done right there should be no issues there.
 
   To start off follow the instructions listed at:
     
   Ensure your user account has the cluster-admin role in your cluster.
+	
   `kubectl create clusterrolebinding user-admin-binding --clusterrole=cluster-admin --user=$(gcloud config get-value account)`
 
   Create a service account that Tiller, the server side of Helm, can use for deploying your charts.
+
   `kubectl create serviceaccount tiller --namespace kube-system`
 
   Grant the Tiller service account the cluster-admin role in your cluster:
+
   `kubectl create clusterrolebinding tiller-admin-binding --clusterrole=cluster-admin --serviceaccount=kube-system:tiller`
 
   Initialize Helm to install Tiller in your cluster:
+
   `./helm init --service-account=tiller`
   `./helm update`
 
 
   verify that helm and tiller is installed in the cluster
   `kubectl get deploy,svc tiller-deploy -n kube-system`
+
   `helm ls` empty result as we haven't installed anything
 
     
