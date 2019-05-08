@@ -12,4 +12,16 @@ spec:
       - path: /movie-details
         backend:
           serviceName: movie-details
-          servicePort: 80  
+          servicePort: 80
+      - path: /movies
+        backend:
+          serviceName: movies
+          servicePort: 80
+      - path: /ratings
+        backend:
+          serviceName: ratings
+          servicePort: 80
+      - path: /predictions
+        backend:
+          serviceName: predictions
+          servicePort: 80              

@@ -7,4 +7,6 @@ services/movie_details/__pycache__/movies.cpython-36.pyc
 services/ratings/__pycache__*
 services/predictions/__pycache__*
 docker_commands.txt
-
+services/__pycache__*
+helm*
+services/movies/__pycache__*

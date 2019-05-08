@@ -19,10 +19,12 @@ def movie_ratings():
     movies = pd.read_csv('ratings_small.csv');
 
     if (movieId is not None):
-
+        
         movies.set_index('movieId',inplace=True)
         response = movies.loc[int(movieId),:];
-        return str(response);
+        ratings = {'ratings' : response['rating'].mean()};
+
+        return json.dumps(ratings);
         
     else:
         return "movieId not found"
