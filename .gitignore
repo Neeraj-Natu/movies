@@ -8,5 +8,4 @@ services/ratings/__pycache__*
 services/predictions/__pycache__*
 docker_commands.txt
 services/__pycache__*
-helm*
 services/movies/__pycache__*
