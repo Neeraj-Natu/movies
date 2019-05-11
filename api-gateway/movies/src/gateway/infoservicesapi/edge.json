@@ -1,0 +1,22 @@
+{
+    "version": "1.0",
+    "envConfig": {
+        "test": {
+           
+            "kvms": [
+                {
+                    "name": "backend_account_config",
+                    "entry": [
+                        {
+                            "name": "test",
+                            "value": "test"
+                        }
+                    ]
+                }
+            ] 
+        }
+       
+    },
+    "orgConfig": {},
+    "apiConfig": {}
+}

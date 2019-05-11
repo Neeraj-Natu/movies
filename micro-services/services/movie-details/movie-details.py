@@ -32,7 +32,7 @@ def movie_details():
         query_param = {'title':title};
         movie_response = requests.get(movie_service, params=query_param).json();
 
-        Id = movie_response.id
+        Id = movie_response['id'][title];
 
         ratings_response = requests.get(rating_service, params={'movieId':Id}).json();
         
