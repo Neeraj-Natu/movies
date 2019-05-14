@@ -1,2 +1,3 @@
 micro-services/services/test/*
 api-gateway/movies/src/gateway/infoservicesapi/target*
+.vscode
