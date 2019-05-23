@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<ProxyEndpoint name="default">
+<ProxyEndpoint name="version2">
     <Description/>
     <FaultRules/>
     <PreFlow name="PreFlow">
@@ -12,13 +12,18 @@
     </PostFlow>
     <Flows>
         <Flow name="movie-ratings">
-            <Description>Get predictions on Movie</Description>
+            <Description>Get Information on Movie ratings</Description>
+            <Request/>
+            <Condition>(proxy.pathsuffix MatchesPath "/movies/ratings") and (request.verb = "GET")</Condition>
+        </Flow>
+        <Flow name="movie-details">
+            <Description>Get Information on Movies</Description>
             <Request/>
             <Condition>(proxy.pathsuffix MatchesPath "/movies") and (request.verb = "GET")</Condition>
-        </Flow>        
+        </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/prediction-services</BasePath>
+        <BasePath>/info/v1</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>

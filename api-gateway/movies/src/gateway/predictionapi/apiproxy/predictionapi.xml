@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy revision="1" name="prediction-services">
-    <Basepaths>/prediction-services</Basepaths>
+    <Basepaths>/predictions</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1557253937706</CreatedAt>
     <CreatedBy>natu.neeraj@gmail.com</CreatedBy>
     <Description>Services for all predictions</Description>
-    <DisplayName>prediction-services</DisplayName>
+    <DisplayName>prediction-api</DisplayName>
     <LastModifiedAt>1557254308874</LastModifiedAt>
     <LastModifiedBy>natu.neeraj@gmail.com</LastModifiedBy>
     <ManifestVersion>SHA-512:44b202d7de6ac9096cf3c095a67b96d9174809bdf6b695d55b37ae7d6a09095fab32f21f39cab65272d3e594a993d344184b6024b432d19404f2243bc9730d4b</ManifestVersion>
     <Policies/>
     <ProxyEndpoints>
-        <ProxyEndpoint>default</ProxyEndpoint>
+        <ProxyEndpoint>version1</ProxyEndpoint>
     </ProxyEndpoints>
     <Resources/>
     <Spec/>

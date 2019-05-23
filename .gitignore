@@ -1,4 +1,4 @@
 micro-services/services/test/*
-api-gateway/movies/src/gateway/infoservicesapi/target*
+api-gateway/movies/src/gateway/infoapi/target*
 .vscode
-api-gateway/movies/src/gateway/predictionservicesapi/target*
+api-gateway/movies/src/gateway/predictionapi/target*

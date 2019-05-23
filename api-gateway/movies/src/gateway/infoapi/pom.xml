@@ -9,9 +9,9 @@
 
     <modelVersion>4.0.0</modelVersion>
     <groupId>apigee</groupId>
-    <artifactId>info-services-api</artifactId>
+    <artifactId>info-api</artifactId>
     <version>1.0</version>
-    <name>info-services-api</name>
+    <name>info-api</name>
     <packaging>pom</packaging>
     <properties>
             <main.basedir>${project.basedir}</main.basedir>
