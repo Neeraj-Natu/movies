@@ -21,7 +21,9 @@ def movie_details():
     if (title is not None):
         movies.set_index('title',inplace=True)
         response = movies.loc[title,:];
-        return json.dumps(response.to_dict());
+        revenue = {'revenue' : response['revenue'].max()};
+
+        return json.dumps(revenue);
     else :
         return "no title found"
 

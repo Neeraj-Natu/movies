@@ -21,7 +21,10 @@ def movie_details():
     if (title is not None):
         movies.set_index('title',inplace=True)
         response = movies.loc[title,:];
-        return json.dumps(response.to_dict());
+        popularity = {'popularity' : response['popularity'].mean()};
+
+        return json.dumps(popularity);
+
     else :
         return "no title found"
 
