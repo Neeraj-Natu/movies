@@ -33,7 +33,7 @@
         </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/info-services/neeraj</BasePath>
+        <BasePath>/info-services</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
