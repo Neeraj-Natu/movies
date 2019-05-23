@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <APIProxy revision="1" name="info-services-api">
-    <Basepaths>/info-services-api</Basepaths>
+    <Basepaths>/info-services</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1557845400407</CreatedAt>
     <CreatedBy>natu.neeraj@gmail.com</CreatedBy>
