@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="1" name="prediction-services">
+<APIProxy revision="2" name="prediction-api">
     <Basepaths>/predictions</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
-    <CreatedAt>1557253937706</CreatedAt>
+    <CreatedAt>1558633306282</CreatedAt>
     <CreatedBy>natu.neeraj@gmail.com</CreatedBy>
     <Description>Services for all predictions</Description>
     <DisplayName>prediction-api</DisplayName>
-    <LastModifiedAt>1557254308874</LastModifiedAt>
+    <LastModifiedAt>1558633306282</LastModifiedAt>
     <LastModifiedBy>natu.neeraj@gmail.com</LastModifiedBy>
-    <ManifestVersion>SHA-512:44b202d7de6ac9096cf3c095a67b96d9174809bdf6b695d55b37ae7d6a09095fab32f21f39cab65272d3e594a993d344184b6024b432d19404f2243bc9730d4b</ManifestVersion>
-    <Policies/>
+    <ManifestVersion>SHA-512:9bc6e24444770528ab58cee1062dfc4fdb3b1be456af4d0adf7bd70e46612bbf0ff3c9cd080d9decccffa2cc0a56e149bb78d7e11466555ee0813bf953b68c15</ManifestVersion>
+    <Policies>
+        <Policy>setTargetURL</Policy>
+    </Policies>
     <ProxyEndpoints>
         <ProxyEndpoint>version1</ProxyEndpoint>
     </ProxyEndpoints>
-    <Resources/>
+    <Resources>
+        <Resource>jsc://setTargetURL.js</Resource>
+    </Resources>
     <Spec/>
     <TargetServers/>
     <TargetEndpoints>
