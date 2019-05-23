@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<APIProxy revision="1" name="info-services-api">
+<APIProxy revision="1" name="info-api">
     <Basepaths>/info</Basepaths>
     <ConfigurationVersion majorVersion="4" minorVersion="0"/>
     <CreatedAt>1557845400407</CreatedAt>
@@ -14,7 +14,9 @@
         <ProxyEndpoint>version1</ProxyEndpoint>
         <ProxyEndpoint>version2</ProxyEndpoint>
     </ProxyEndpoints>
-    <Resources/>
+    <Resources>
+        <Resource>jsc://setTargetURL.js</Resource>
+    </Resources>
     <Spec/>
     <TargetServers/>
     <TargetEndpoints/>
