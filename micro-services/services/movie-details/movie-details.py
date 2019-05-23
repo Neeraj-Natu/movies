@@ -25,7 +25,9 @@ def movie_details():
     title = content['title'];
 
     movie_service = "http://movies.default.svc.cluster.local:80/movies";
-    rating_service = "http://ratings.default.svc.cluster.local:80/ratings";
+    popularity_service = "http://popularity.default.svc.cluster.local:80/popularity";
+    revenue_service = "http://revenue.default.svc.cluster.local:80/revenues";
+    rating_service = "http://rating.default.svc.cluster.local:80/ratings";
 
     
     if (title is not None):
