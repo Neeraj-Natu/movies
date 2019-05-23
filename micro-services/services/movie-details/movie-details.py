@@ -27,14 +27,20 @@ def movie_details():
     movie_service = "http://movies.default.svc.cluster.local:80/movies";
     popularity_service = "http://popularity.default.svc.cluster.local:80/popularity";
     revenue_service = "http://revenue.default.svc.cluster.local:80/revenues";
-    rating_service = "http://rating.default.svc.cluster.local:80/ratings";
 
     
     if (title is not None):
         
         query_param = {'title':title};
         movie_response = requests.get(movie_service, params=query_param).json();
+        popularity_response = requests.get(popularity_service, params=query_param).json();
+        revenue_response = requests.get(revenue_service, params=query_param).json();
         
+        ## merging the responses remains to do 
+        #movie_response.update(popularity_response);
+        #movie_response.update(revenue_response);
+
+
         return json.dumps(movie_response);
     
     else :
