@@ -13,7 +13,7 @@ def rediness_check():
     
     return "200";
 
-@app.route('/ratings', methods=['GET']) 
+@app.route('/info/ratings', methods=['GET']) 
 def movie_ratings():
     movieId = request.args.get('movieId');
     movies = pd.read_csv('ratings_small.csv');

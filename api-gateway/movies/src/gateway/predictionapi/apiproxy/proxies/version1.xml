@@ -14,11 +14,11 @@
         <Flow name="movie-predictions">
             <Description>Get predictions on Movie</Description>
             <Request/>
-            <Condition>(proxy.pathsuffix MatchesPath "/movie") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/boxoffice") and (request.verb = "GET")</Condition>
         </Flow>        
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/predictions</BasePath>
+        <BasePath>/movies/v1/predictions</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>

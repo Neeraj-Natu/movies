@@ -14,7 +14,7 @@
         <Flow name="movie-ratings">
             <Description>Get Information on Movie ratings</Description>
             <Request/>
-            <Condition>(proxy.pathsuffix MatchesPath "/movies/ratings") and (request.verb = "GET")</Condition>
+            <Condition>(proxy.pathsuffix MatchesPath "/ratings") and (request.verb = "GET")</Condition>
         </Flow>
         <Flow name="movie-details">
             <Description>Get Information on Movies</Description>
@@ -23,7 +23,7 @@
         </Flow>
     </Flows>
     <HTTPProxyConnection>
-        <BasePath>/info/v1</BasePath>
+        <BasePath>/movies/v1/info</BasePath>
         <Properties/>
         <VirtualHost>secure</VirtualHost>
     </HTTPProxyConnection>
