@@ -1,20 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: movies-deployment
+  name: popularity-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: movies
+      app: popularity
   template:
     metadata:
       labels:
-        app: movies
+        app: popularity
     spec:
       containers:
-      - name: movies
-        image: gcr.io/neeraj-arena/movies
+      - name: popularity
+        image: gcr.io/neeraj-arena/popularity
         ports:
         - containerPort: 80
 
@@ -22,10 +22,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: movies
+  name: popularity
 spec:
   selector:
-    app: movies
+    app: popularity
   ports:
   - protocol: TCP
     port: 80

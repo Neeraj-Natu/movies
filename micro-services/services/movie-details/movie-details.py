@@ -19,29 +19,29 @@ def rediness_check():
 
 
 
-@app.route('/movie-details', methods=['POST']) 
+@app.route('/info/details', methods=['POST']) 
 def movie_details():
     content = request.get_json();
     title = content['title'];
 
-    movie_service = "http://movies.default.svc.cluster.local:80/movies";
-    popularity_service = "http://popularity.default.svc.cluster.local:80/popularity";
-    revenue_service = "http://revenue.default.svc.cluster.local:80/revenues";
+    popularity_service = "http://popularity.default.svc.cluster.local:80/info/popularity";
+    revenue_service = "http://revenue.default.svc.cluster.local:80/info/revenue";
+    budget_service = "http://revenue.default.svc.cluster.local:80/info/budget";
 
     
     if (title is not None):
         
         query_param = {'title':title};
-        movie_response = requests.get(movie_service, params=query_param).json();
+        budget_response = requests.get(budget_service, params=query_param).json();
         popularity_response = requests.get(popularity_service, params=query_param).json();
         revenue_response = requests.get(revenue_service, params=query_param).json();
         
         ## merging the responses remains to do 
-        #movie_response.update(popularity_response);
-        #movie_response.update(revenue_response);
+        #budget_response.update(popularity_response);
+        #budget_response.update(revenue_response);
 
 
-        return json.dumps(movie_response);
+        return json.dumps(budget_response);
     
     else :
         return "title not found"

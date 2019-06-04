@@ -35,7 +35,7 @@ spec:
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: movies
+  name: budget
 spec:
   hosts:
   - "*"
@@ -44,10 +44,10 @@ spec:
   http:
   - match:
     - uri:
-        exact: /movies
+        exact: /budget
     route:
     - destination:
-        host: movies
+        host: budget
         port:
           number: 80
 ---
@@ -86,5 +86,43 @@ spec:
     route:
     - destination:
         host: ratings
+        port:
+          number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: revenues
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - movies-gateway
+  http:
+  - match:
+    - uri:
+        exact: /revenues
+    route:
+    - destination:
+        host: revenues
+        port:
+          number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: popularity
+spec:
+  hosts:
+  - "*"
+  gateways:
+  - movies-gateway
+  http:
+  - match:
+    - uri:
+        exact: /popularity
+    route:
+    - destination:
+        host: popularity
         port:
           number: 80

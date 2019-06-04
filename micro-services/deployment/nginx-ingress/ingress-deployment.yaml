@@ -13,10 +13,18 @@ spec:
         backend:
           serviceName: movie-details
           servicePort: 80
-      - path: /movies
+      - path: /budget
         backend:
-          serviceName: movies
+          serviceName: budget
           servicePort: 80
+      - path: /revenues
+        backend:
+          serviceName: revenues
+          servicePort: 80
+      - path: /popularity
+        backend:
+          serviceName: popularity
+          servicePort: 80        
       - path: /ratings
         backend:
           serviceName: ratings

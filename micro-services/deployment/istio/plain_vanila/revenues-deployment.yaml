@@ -1,20 +1,20 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: budget-deployment
+  name: revenues-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: budget
+      app: revenues
   template:
     metadata:
       labels:
-        app: budget
+        app: revenues
     spec:
       containers:
-      - name: budget
-        image: gcr.io/neeraj-arena/budget
+      - name: revenues
+        image: gcr.io/neeraj-arena/revenues
         ports:
         - containerPort: 80
 
@@ -22,10 +22,10 @@ spec:
 kind: Service
 apiVersion: v1
 metadata:
-  name: budget
+  name: revenues
 spec:
   selector:
-    app: budget
+    app: revenues
   ports:
   - protocol: TCP
     port: 80
