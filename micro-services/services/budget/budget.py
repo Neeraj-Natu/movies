@@ -13,7 +13,7 @@ def rediness_check():
     
     return "200";
 
-@app.route('/info/movies', methods=['GET']) 
+@app.route('/info/budget', methods=['GET']) 
 def movie_details():
     title = request.args.get('title');
     movies = pd.read_csv('movie_details.csv');
@@ -21,7 +21,11 @@ def movie_details():
     if (title is not None):
         movies.set_index('title',inplace=True)
         response = movies.loc[title,:];
-        return json.dumps(response.to_dict());
+        response['budget'] = pd.to_numeric(response['budget']);
+        budget = {'budget' : response['budget'].mean()};
+
+
+        return json.dumps(budget);
     else :
         return "no title found"
 

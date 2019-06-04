@@ -1,11 +1,11 @@
 # Using an official python runtime image as parent image.
 FROM python:3.7-slim
 
-# Setting working directory as movies
-WORKDIR /movies
+# Setting working directory as budget
+WORKDIR /budget
 
-# copying the current directory contents to movies directory in container
-COPY . /movies
+# copying the current directory contents to budget directory in container
+COPY . /budget
 
 # Installing any needed dependencies specified in requirements.txt
 RUN pip install -r ./requirements.txt
@@ -14,5 +14,5 @@ RUN pip install -r ./requirements.txt
 EXPOSE 80
 
 
-# Run movies.py when the container launches
-CMD ["python", "movies.py"]
+# Run budget.py when the container launches
+CMD ["python", "budget.py"]
