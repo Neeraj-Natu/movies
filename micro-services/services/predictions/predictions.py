@@ -14,7 +14,7 @@ def rediness_check():
     
     return "200";
 
-@app.route('/predictions/boxoffice', methods=['GET']) 
+@app.route('/movies/boxoffice', methods=['GET']) 
 def movie_details():
     title = request.args.get('title');
         

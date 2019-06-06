@@ -9,27 +9,27 @@ spec:
   rules:
   - http:
       paths:
-      - path: /movie-details
+      - path: /info/details
         backend:
           serviceName: movie-details
           servicePort: 80
-      - path: /budget
+      - path: /info/budget
         backend:
           serviceName: budget
           servicePort: 80
-      - path: /revenues
+      - path: /info/revenues
         backend:
           serviceName: revenues
           servicePort: 80
-      - path: /popularity
+      - path: /info/popularity
         backend:
           serviceName: popularity
           servicePort: 80        
-      - path: /ratings
+      - path: /info/ratings
         backend:
           serviceName: ratings
           servicePort: 80
-      - path: /predictions
+      - path: /predictions/boxoffice
         backend:
           serviceName: predictions
           servicePort: 80              

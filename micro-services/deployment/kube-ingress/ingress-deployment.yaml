@@ -8,7 +8,7 @@ spec:
   rules:
   - http:
       paths:
-      - path: /movie-details
+      - path: /info/details
         backend:
           serviceName: movie-details
           servicePort: 80  

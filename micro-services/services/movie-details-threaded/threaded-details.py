@@ -19,7 +19,7 @@ def rediness_check():
 
 
 
-@app.route('/movies/details', methods=['POST']) 
+@app.route('/info/details', methods=['POST']) 
 def movie_details():
     content = request.get_json();
     title = content['title'];
@@ -36,7 +36,6 @@ def movie_details():
         popularity_response = requests.get(popularity_service, params=query_param).json();
         revenue_response = requests.get(revenue_service, params=query_param).json();
         
-        ## merging the responses remains to do 
         budget_response.update(popularity_response);
         budget_response.update(revenue_response);
 
