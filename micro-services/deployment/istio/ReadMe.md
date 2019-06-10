@@ -20,15 +20,20 @@ In case if you want to install a custom version of Istio (recommended 1.1 and ab
   
   `helm repo add istio.io https://storage.googleapis.com/istio-release/releases/1.2.0/charts/`
 
-* change directory to the root of release.
+* change directory to the root of release. cd path to istio-(release_version).
   
 * Now bootstrap all the istio CRDs using the below command to install `istio-init`
 
     `helm install install/kubernetes/helm/istio-init --name istio-init --namespace istio-system`
 
+* For kiali there is an extra step to move back to plain_vanila folder and install the kiali secrets using 
+
+    `kubectl apply -f kiali-deployment.yaml`
+
+
 * Once that is done use below command to install istio:
 
-    `helm install install/kubernetes/helm/istio --name istio --namespace istio-system`
+    `helm install install/kubernetes/helm/istio --set kiali.enabled=true --name istio --namespace istio-system`
 
 
 ## Installing services on an Istio enabled cluster

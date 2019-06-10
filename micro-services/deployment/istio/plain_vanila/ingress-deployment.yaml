@@ -25,7 +25,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /movie-details
+        exact: /movies/details
     route:
     - destination:
         host: movie-details
@@ -44,7 +44,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /budget
+        exact: /movies/budget
     route:
     - destination:
         host: budget
@@ -63,7 +63,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /predictions
+        exact: /movies/predictions
     route:
     - destination:
         host: predictions
@@ -82,7 +82,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /ratings
+        exact: /movies/ratings
     route:
     - destination:
         host: ratings
@@ -101,7 +101,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /revenues
+        exact: /movies/revenues
     route:
     - destination:
         host: revenues
@@ -120,7 +120,7 @@ spec:
   http:
   - match:
     - uri:
-        exact: /popularity
+        exact: /movies/popularity
     route:
     - destination:
         host: popularity
