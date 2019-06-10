@@ -7,6 +7,7 @@ So far I have readup and used:
     
   * Micro-Services
     * [Ingress](https://github.com/nginxinc/kubernetes-ingress)
+    * [Nginx-Ingress](https://kubernetes.github.io/ingress-nginx/)
     * [Istio](https://istio.io/)
     * [Node-Port](https://kubernetes.io/docs/concepts/services-networking/service/)
     * [helm](https://helm.sh/)
