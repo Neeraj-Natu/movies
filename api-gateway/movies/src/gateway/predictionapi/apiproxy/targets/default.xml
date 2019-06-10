@@ -7,6 +7,10 @@
             <Step>
                 <Name>setTargetURL</Name>
             </Step>
+            <Step>
+                <Name>AssignMessage.Queryparams</Name>
+                <Condition>(proxy.pathsuffix != /movies/details)</Condition>
+            </Step>
         </Request>
         <Response/>
     </PreFlow>

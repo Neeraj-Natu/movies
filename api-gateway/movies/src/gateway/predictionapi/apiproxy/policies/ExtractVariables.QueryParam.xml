@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ExtractVariables async="false" continueOnError="false" enabled="true" name="ExtractVariables.QueryParam">
+    <DisplayName>ExtractVariables.QueryParam</DisplayName>
+    <Properties/>
+    <QueryParam name="title">
+        <Pattern ignoreCase="true">{title}</Pattern>
+    </QueryParam>
+</ExtractVariables>

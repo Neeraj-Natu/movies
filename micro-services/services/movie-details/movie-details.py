@@ -24,9 +24,9 @@ def movie_details():
     content = request.get_json();
     title = content['title'];
 
-    popularity_service = "http://popularity.default.svc.cluster.local:80/info/popularity";
-    revenue_service = "http://revenues.default.svc.cluster.local:80/info/revenues";
-    budget_service = "http://budget.default.svc.cluster.local:80/info/budget";
+    popularity_service = "http://popularity.default.svc.cluster.local:80/movies/popularity";
+    revenue_service = "http://revenues.default.svc.cluster.local:80/movies/revenues";
+    budget_service = "http://budget.default.svc.cluster.local:80/movies/budget";
 
     
     if (title is not None):
