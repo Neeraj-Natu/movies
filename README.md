@@ -23,7 +23,7 @@ For API Gateway I preferred Apigee as I use it in my day job and also cause it's
 
 	To get started with trying out these different technologies you'll need to first install the below:
 
-	* Docker for Kubernetes (Mac OS or Windows 10 Pro)
+	* Docker for Kubernetes (Mac OS or Windows 10 Pro or Linux Based OS)
 	* Google Cloud SDK
 	* kubectl command line
 	* VS Code (or any other IDE)
