@@ -33,7 +33,7 @@ In case if you want to install a custom version of Istio (recommended 1.1 and ab
 
 * Once that is done use below command to install istio:
 
-    `helm install install/kubernetes/helm/istio --set kiali.enabled=true --name istio --namespace istio-system`
+    `helm install install/kubernetes/helm/istio --set global.disablePolicyChecks=false --set kiali.enabled=true --name istio --namespace istio-system`
 
 
 ## Installing services on an Istio enabled cluster
