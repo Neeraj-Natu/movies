@@ -1,4 +1,4 @@
-Probably you might know what Istion is and why should it be used if not please follow the below link to get familier with the service mesh technology that layers above the vanila Kubernetes deployments.
+Probably you might know what Istio is and why should it be used if not please follow the below link to get familier with the service mesh technology that layers above the vanila Kubernetes deployments.
 
 [What is Istio](https://istio.io/docs/concepts/what-is-istio/)
 
